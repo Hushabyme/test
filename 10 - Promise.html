@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Promise</title>
+</head>
+<body>
+<script>
+  function wait(time) {
+    return new Promise(resolve => {
+      setTimeout(resolve ,time)
+    })
+  }
+
+  wait(1000)
+    .then(function () {
+      console.log('step 1');
+      return wait(1000);
+    })
+    .then(function () {
+      console.log('step 2');
+      return wait(2000);
+    })
+    .then(function () {
+      console.log('step 3');
+      return wait(3000);
+    })
+    .then(function () {
+      console.log('step 4');
+      return wait(4000);
+    })
+    .then(function () {
+      console.log('step 5');
+      return wait(5000);
+    })
+</script>
+</body>
+</html>

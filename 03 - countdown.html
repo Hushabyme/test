@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>countdown</title>
+</head>
+<body>
+<script>
+  function countdown(count, interval, callback) {
+
+    if(count < 0) return;
+
+    setTimeout(function update() {
+      if(--count > 0) {
+        // 在早期浏览器中将 update 替换成 arguments.callee
+        setTimeout(update, interval)
+      }
+
+      callback(count);
+    }, interval)
+  }
+
+  countdown(10, 1000, t => console.log(t));
+</script>
+</body>
+</html>

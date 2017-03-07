@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>deepCopy</title>
+</head>
+<body>
+<script>
+  function deepCopy(des, src) {
+    if (typeof src !== 'object' || !src) return des;
+
+    for (let key in src) {
+      if (src.hasOwnProperty(key)) {
+        let obj = src[key];
+
+        if (obj && typeof obj === 'object') {
+          des[key] = des[key] || {};
+          deepCopy(des[key], obj);
+        } else {
+          des[key] = src[key];
+        }
+      }
+    }
+
+    return des;
+  }
+
+  function merge(des, ...objs) {
+    return [des, objs].reduce((a, b) => deepCopy(a, b));
+  }
+
+  const obj = {};
+  const obj1 = {};
+  deepCopy(obj, {
+    a: 1,
+    b: 2
+  });
+
+  merge(obj1, { a: 1 }, { b: 2 }, { c: 3 });
+
+
+  console.log(obj);
+  console.log(obj1);
+  console.log(obj === obj1); // false 说明对象不是从 obj 中复制过来的
+
+</script>
+</body>
+</html>

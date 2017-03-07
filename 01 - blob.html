@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blob</title>
+</head>
+<body>
+
+<script>
+  const json = {
+    name: 'Alice'
+  };
+
+  const blob = new Blob([JSON.stringify(json, null, 2)], {
+    type: 'application/json'
+  });
+  console.log(blob);
+
+  const reader = new FileReader();
+  reader.readAsText(blob, 'utf-8');
+  reader.onload = function () {
+    const p = document.createElement('p');
+    const result = reader.result;
+    p.textContent = result;
+    document.body.appendChild(p);
+  }
+</script>
+</body>
+</html>

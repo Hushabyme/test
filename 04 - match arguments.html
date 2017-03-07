@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>match arguments</title>
+</head>
+<body>
+<script>
+  function _match(fn) {
+    return function (...args) {
+      if (args.length !== fn.length) {
+        throw new Error('参数个数不匹配!');
+      }
+
+      return fn.apply(this, args);
+    }
+  }
+
+  const add = _match((a, b, c) => a + b + c);
+
+  console.log(add(1, 2, 3));
+  console.log(add(1, 2));
+</script>
+</body>
+</html>

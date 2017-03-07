@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>es6 block scope</title>
+</head>
+<body>
+<script>
+  let Class;
+  {
+    let private = 'private';
+
+    Class = function () {
+      this.public = 'public';
+    };
+
+    Class.prototype.getData = function () {
+      return private;
+    }
+  }
+
+  const myClass = new Class();
+
+  // ["public", undefined, "private"]
+  console.log([myClass.public, myClass.private, myClass.getData()]);
+
+</script>
+</body>
+</html>

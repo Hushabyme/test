@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>random</title>
+</head>
+<body>
+<script>
+
+  // 实现一个函数，参数为数字，数组长度为 num，随机 num 个数字
+  function random(num) {
+    let arr = [];
+
+    if(num && typeof num === 'number') {
+
+      for(let i = 0; i < num; i++) {
+        arr.push(Math.floor(Math.random() * 22) + 2)
+      }
+    } else {
+      throw new Error('please check out the argument whether it is number')
+    }
+
+    return arr;
+  }
+  console.log(random(10));
+  console.log(random('2'));
+
+</script>
+</body>
+</html>

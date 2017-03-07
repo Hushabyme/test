@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>setStyle</title>
+</head>
+<body>
+
+<h1>Hello World</h1>
+
+<script>
+  function setStyle(el, props, value) {
+    if(typeof el === 'string') {
+      el = document.querySelector(el);
+    }
+
+    if(typeof props === 'object') {
+      for(let key in props) {
+        setStyle(el, key, props[key]);
+      }
+    } else {
+      el.style[props] = value;
+    }
+  }
+
+  setStyle('h1', {
+    color: 'pink',
+    background: '#000',
+    fontSize: '40px'
+  });
+
+  console.log(setStyle.length);
+</script>
+</body>
+</html>
