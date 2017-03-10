@@ -1,0 +1,27 @@
+<script>
+  function debounce(fn, wait = 20, immediate = true) {
+    let timeout;
+
+    return function (...args) {
+      let ctx = this;
+
+      const later = function () {
+        timeout = null;
+
+        if(!immediate) {
+          fn.apply(ctx, args);
+        }
+      };
+
+      const callNow = immediate && !timeout;
+
+      clearTimeout(timeout);
+
+      timeout = setTimeout(later, wait);
+
+      if(!callNow) {
+        fn.apply(ctx, args);
+      }
+    }
+  }
+</script>

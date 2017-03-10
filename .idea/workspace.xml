@@ -41,8 +41,8 @@
       <file leaf-file-name="12 - throttle.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/12 - throttle.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+            <state relative-caret-position="598">
+              <caret line="28" column="2" lean-forward="true" selection-start-line="28" selection-start-column="2" selection-end-line="30" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -84,6 +84,7 @@
         <option value="$PROJECT_DIR$/10 - Promise.html" />
         <option value="$PROJECT_DIR$/11 - async function.html" />
         <option value="$PROJECT_DIR$/12 - async add.html" />
+        <option value="E:/翻页.html" />
         <option value="$PROJECT_DIR$/12 - throttle.html" />
       </list>
     </option>
@@ -229,12 +230,12 @@
       <updated>1488253227863</updated>
       <workItem from="1488253229425" duration="853000" />
       <workItem from="1488617585008" duration="1028000" />
-      <workItem from="1488845052869" duration="18510000" />
+      <workItem from="1488845052869" duration="21389000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20391000" />
+    <option name="totallyTimeSpent" value="23270000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="7" />
@@ -407,10 +408,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://E:/翻页.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-174">
+          <caret line="45" column="31" lean-forward="true" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/JavaScript-30days/01 - 有趣的架子鼓小游戏/js/player-dev.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/12 - throttle.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        <state relative-caret-position="598">
+          <caret line="28" column="2" lean-forward="true" selection-start-line="28" selection-start-column="2" selection-end-line="30" selection-end-column="3" />
           <folding />
         </state>
       </provider>
