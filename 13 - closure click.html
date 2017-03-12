@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<ul>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+</ul>
+
+<script>
+  const lis = document.querySelectorAll('li');
+  window.onload = function () {
+    for (var i = 0; i < lis.length; i++) {
+      lis[i].onclick = (function (i) {
+          alert(i);
+      }(i));
+    }
+  }
+</script>
+</body>
+</html>
