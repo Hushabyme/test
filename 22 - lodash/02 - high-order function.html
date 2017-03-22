@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  // 使用高阶函数实现一个最基本的函数
+  // 接着可以自定义剩余的函数，这个思想一定要掌握！
+
+  function calc(method) {
+    const cal = Math[method];
+    return (number, ...args) => cal(number, args);
+  }
+
+  const ceil = calc('ceil');
+  const floor = calc('floor');
+  const pow = calc('pow');
+
+  console.log(ceil(2.3));  // 3
+  console.log(floor(2.3));  // 2
+  console.log(pow(2, 3));  // 8
+</script>
+</body>
+</html>

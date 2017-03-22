@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  /*
+  *
+  * 今天在看到 "结构化克隆" 的时候找到的一个深克隆对象的方法，很简洁，也很方便
+  * 暂时不清楚它的性能如何，在大型的对象的复制时会有什么样的表现
+  *
+  * */
+  const obj = {
+    a: 1,
+    b: 2,
+  };
+
+  const newObj =  JSON.parse(JSON.stringify(obj));
+  console.time(newObj);
+  console.timeEnd(newObj);  // 0.04736328125ms
+
+  console.log(newObj);  // Object {a: 1, b: 2}
+  console.log(obj === newObj);  // false
+</script>
+</body>
+</html>

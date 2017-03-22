@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  function after(n, func) {
+    if (typeof func != 'function') {
+      throw new TypeError('Expected a function')
+    }
+    return function(...args) {
+      if (--n < 1) {
+        return func.apply(this, args)
+      }
+    }
+  }
+
+  var saves = ['profile', 'settings'];
+
+  var done = _.after(saves.length, function() {
+    console.log('done saving!');
+  });
+
+  _.forEach(saves, function(type) {
+    asyncSave({ 'type': type, 'complete': done });
+  });
+</script>
+</body>
+</html>

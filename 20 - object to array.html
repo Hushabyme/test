@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+
+
+  // 如果我们要将一个对象转换成数组形式来表示，就可以使用下面的函数来转换
+
+  function matchData(obj) {
+    const result = Object.keys(obj);
+    let length = result.length;
+
+    while (length--) {
+      const key = result[length];
+      const value = obj[key];
+      result[length] = [key, value];
+    }
+
+    return result;
+  }
+
+  const obj = {
+    a: 1,
+    b: 2
+  };
+  console.log(matchData(obj));  // [ [ 'a', 1 ], [ 'b', 2 ] ]
+
+</script>
+</body>
+</html>
