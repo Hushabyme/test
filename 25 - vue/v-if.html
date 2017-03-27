@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Watch</title>
+  <script src="vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <template v-if="show">
+      <p>I'm here!</p>
+    </template>
+    <template v-else="">
+      <p>Now you see me!</p>
+    </template>
+
+    <button type="button" @click="show = !show">点击我</button>
+  </div>
+
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        show: true
+      }
+    });
+  </script>
+</body>
+</html>

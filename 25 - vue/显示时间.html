@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>控制vue实例</title>
+  <script src="vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>{{ time }}</h1>
+  </div>
+
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        time: new Date().toLocaleString()
+      },
+      beforeMount() {
+        setInterval(() => {
+          this.time = new Date().toLocaleString()
+        } ,1000);
+      },
+    });
+  </script>
+</body>
+</html>

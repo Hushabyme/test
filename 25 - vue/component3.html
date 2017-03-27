@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>component</title>
+  <script src="vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <hello-vue></hello-vue>
+  </div>
+
+  <script>
+//  该实例中的组件部分
+    const hello = {
+      data() {
+        return {
+          message: 'Hello, Vue.js!'
+        };
+      },
+      template: '<div>' +
+                  '<h1>{{ message }}</h1>' +
+                  '<button @click="change">change</button>' +
+                '</div>',
+      methods: {
+        change() {
+          this.message = 'Hello, World!'
+        }
+      }
+    };
+
+//  Vue 实例
+    new Vue({
+      el: '#app',
+      components: {
+        'hello-vue': hello
+      }
+    });
+
+  </script>
+</body>
+</html>

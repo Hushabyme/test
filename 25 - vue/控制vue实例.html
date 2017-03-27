@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>控制vue实例</title>
+  <script src="vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>{{ title }}</h1>
+  </div>
+
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        title: 'Welcome to learn Vue.js!'
+      }
+    });
+
+    setTimeout(() => {
+      app.title = 'Hello World!'
+    } ,2000);
+
+    console.log(app.$data.title);
+  </script>
+</body>
+</html>

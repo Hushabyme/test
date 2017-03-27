@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue TodoList</title>
+  <script src="vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <label>
+    <input type="text" v-model="another">
+  </label>
+  <button @click="add">添加</button>
+
+  <ul>
+    <li v-for="items of list">
+      {{ items }}
+    </li>
+  </ul>
+</div>
+
+<script>
+
+  new Vue({
+    el: '#app',
+    data: {
+      list: [
+        '小明',
+        '小王',
+        '小李',
+        '小黄',
+      ],
+      another: ''
+    },
+    methods: {
+      add() {
+        this.list.push(this.another);
+        this.another = '';
+      }
+    }
+  });
+</script>
+</body>
+</html>

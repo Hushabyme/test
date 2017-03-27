@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key</title>
+  <script src="vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <label>
+    <input type="text" @keyup.enter="key">
+  </label>
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    methods: {
+      key() {
+        alert('你按了回车键！')
+      }
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>change color</title>
+  <script src="vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="person in persons" :key="person">
+        <p>姓名：{{ person.name }}</p>
+        <p>年龄：{{ person.age }}</p>
+        <p>性别：{{ person.sex }}</p>
+      </li>
+    </ul>
+
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        persons: [
+          {name: 'Alice', age: 21, sex: 'female'},
+          {name: 'Bob', age: 23, sex: 'male'},
+          {name: 'Cherry', age: 18, sex: 'female'},
+        ]
+      }
+    });
+  </script>
+</body>
+</html>

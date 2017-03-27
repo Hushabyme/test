@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>change color</title>
+  <script src="vue.js"></script>
+</head>
+<style>
+  .demo {
+    width: 100px;
+    height: 100px;
+    background: gray;
+    display: inline-block;
+    margin: 10px;
+  }
+  .red { background: red;}
+  .green { background: green;}
+  .blue { background: blue;}
+</style>
+
+<body>
+  <div id="app">
+    <div
+      class="demo"
+      @click="changeRed = !changeRed"
+      :class="{red: changeRed}"
+    ></div>
+    <div
+      class="demo"
+      @click="changeGreen = !changeGreen"
+      :class="{green: changeGreen}"
+     ></div>
+    <div
+      class="demo"
+      @click="changeBlue = !changeBlue"
+      :class="{blue: changeBlue}"
+    ></div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        changeRed: false,
+        changeGreen: false,
+        changeBlue: false
+      }
+    });
+  </script>
+</body>
+</html>

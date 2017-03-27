@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>component</title>
+  <script src="vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <hello style="color: red"></hello>
+    <hello style="color: orange"></hello>
+    <hello style="color: pink"></hello>
+  </div>
+
+  <script>
+//  该实例中的组件部分
+    Vue.component('hello', {
+      data() {
+        return {
+          message: 'Hello, World!',
+        }
+      },
+      template: '<h1>{{ message }}</h1>',
+    });
+
+//  Vue 实例
+    new Vue({
+      el: '#app'
+    });
+
+
+  </script>
+</body>
+</html>

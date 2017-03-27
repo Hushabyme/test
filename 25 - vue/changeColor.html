@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>change</title>
+  <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+      <div style="width: 100vw; height: 100vh;" :style="{background: color}">
+        <label>
+          <input type="text" v-model="color">
+        </label>
+      </div>
+    </div>
+
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          color: ''
+        }
+      });
+    </script>
+</body>
+</html>
