@@ -29,4 +29,4 @@ Vue.directive('focus', {
 new Vue({
   el: '#app',
   render: h => h(App)
-});
+})
