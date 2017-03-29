@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>promise imitate</title>
+</head>
+<body>
+<script>
+  /*
+  *
+  * 模仿 Promise 的实现原理
+  *
+  * */
+
+  function Promise(fn) {
+    // 假定我们有一个队列，将事件传入到此队列中，
+    const deferreds = [];
+    
+    this.then = function (onFulfilled) {
+      deferreds.push(onFulfilled);
+      return this;
+    };
+
+    function resolve(value) {
+      setTimeout(() => {
+        deferreds.forEach(deferred => {
+          deferred(value);
+        });
+      } ,0);
+    }
+
+    fn(resolve);
+  }
+  
+  function getUserId() {
+    return new Promise(resolve => {
+      setTimeout(() => resolve('Hello!'), 3000)
+    });
+  }
+
+  getUserId()
+    .then(id => console.log('do something', id))
+    .then(id => console.log('do something else', id));
+</script>
+</body>
+</html>

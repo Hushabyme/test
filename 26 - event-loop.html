@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>event-loop</title>
+</head>
+<body>
+
+<script>
+  setTimeout(function() {
+    console.log('timeout1');
+  });
+
+  new Promise(function(resolve) {
+    console.log('promise1');
+    for(let i = 0; i < 1000; i++) {
+      i === 99 && resolve();
+    }
+    console.log('promise2');
+  }).then(function() {
+    console.log('then1');
+  });
+
+  console.log('global1');
+
+  // 输出结果：
+  /*
+  * 1. promise1
+  * 2. promise2
+  * 3. global1
+  * 4. then1
+  * 5. timeout1
+  * */
+
+</script>
+</body>
+</html>
